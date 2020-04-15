@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 			//glue={"src/main/java/com/restapi/addplace/stepdefinitions"},
 			glue={"com.restapi.addplace.stepdefinitions"},
 			features="src/test/resources/com/restapi/addplace/features",
-			//tags="",
+			tags=" @TC01",
 			dryRun=false,
 			strict=true
 		)
