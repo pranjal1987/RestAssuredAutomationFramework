@@ -34,7 +34,6 @@ public class StepDefinition {
 	@Before
 	public void initialize(Scenario scenarName) throws Exception {
 		FileOperations.loadProperties();
-		url = FileOperations.getProperty("ADD_PLACE_URL");
 		projectName = FileOperations.getProperty("MODULE_NAME");
 		scenarioName=scenarName.getName();
 		
@@ -99,7 +98,7 @@ public class StepDefinition {
 	@Then("User gets the place_id response")
 	public void user_gets_the_place_id_response() throws Exception {
 		Reporter.createExtentNode(new Throwable().getStackTrace()[0].getMethodName());
-		String place_id = raUtils.getValueFromJSONResponse(response,"place_id");
+		String place_id = raUtils.getValueFromJSONResponse(response,"place_id","STRING");
 		Reporter.writeLog("Place_id : {"+place_id+"} is fetched in response while posting Add Place API", true, false);
 		Reporter.setExtentNodeNull();
 	}

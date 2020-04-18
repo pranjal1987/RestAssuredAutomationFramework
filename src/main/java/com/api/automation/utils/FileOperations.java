@@ -31,7 +31,6 @@ public class FileOperations {
 	//Get property from properties file
 	public static String getProperty(String key){
 		try{
-			log.info(properties.getProperty(key));
 			return properties.getProperty(key);
 		}catch(Exception E){
 			log.warn("Exception in getProperty method in FileOperations.java file"+ E);
@@ -100,7 +99,7 @@ public class FileOperations {
 
 		}catch(Exception E){
 			log.info("getDataFromExcel method failed : "+E);
-			Reporter.writeLog("getDataFromExcel method failed, please refer console logs for exception", false, true);
+			Reporter.writeLog("getDataFromExcel method failed, please refer console logs for exception", false, false);
 		}finally{
 			file=null;
 			workbook.close();
